@@ -4,26 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d093e0c-b2ff-4cde-85b5-e801eb157ab4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Graphics.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DisplayWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GeomDisplayVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/geometrics/GeomCompos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/geometrics/GeomSimple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/geometrics/GeomVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/geometrics/Geometric.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/geometrics/simple/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/geometrics/tools/Points.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/geometrics/tools/Vector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/network/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/network/Server.java" afterDir="false" />
+    <list default="true" id="6d093e0c-b2ff-4cde-85b5-e801eb157ab4" name="Changes" comment="version 1">
+      <change afterPath="$PROJECT_DIR$/src/parser/NodeCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/NodePolygone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/RequestHandlerChainNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/RequestParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/network/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/network/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DisplayWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphic/DisplayWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GeomDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphic/GeomDisplayVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometrics/GeomVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometrics/GeomVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometrics/simple/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometrics/geom/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometrics/tools/Points.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometrics/tools/Points.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/network/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/network/Server.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +62,14 @@
       <option name="presentableId" value="Default" />
       <updated>1675743607441</updated>
     </task>
+    <task id="LOCAL-00001" summary="version 1">
+      <created>1676028062376</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676028062376</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,5 +82,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="version 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1" />
   </component>
 </project>

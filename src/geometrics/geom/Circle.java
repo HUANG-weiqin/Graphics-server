@@ -1,4 +1,4 @@
-package geometrics.simple;
+package geometrics.geom;
 import geometrics.GeomSimple;
 import geometrics.GeomVisitor;
 import geometrics.tools.Points;

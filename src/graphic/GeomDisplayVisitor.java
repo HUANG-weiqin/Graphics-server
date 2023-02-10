@@ -1,9 +1,11 @@
+package graphic;
+
 import geometrics.GeomCompos;
 import geometrics.GeomVisitor;
 import geometrics.Geometric;
-import geometrics.simple.Circle;
+import geometrics.geom.Circle;
 
-public class GeomDisplayVisitor implements GeomVisitor{
+public class GeomDisplayVisitor implements GeomVisitor {
 
     private DisplayWindow w = DisplayWindow.getInstance();
 

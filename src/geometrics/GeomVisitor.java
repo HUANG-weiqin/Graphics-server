@@ -1,6 +1,6 @@
 package geometrics;
 
-import geometrics.simple.Circle;
+import geometrics.geom.Circle;
 
 public interface GeomVisitor {
 
