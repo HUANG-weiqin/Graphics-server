@@ -1,18 +1,20 @@
 package parser;
 
 import geometrics.GeomCompos;
+import geometrics.geom.Line;
 import parser.network.Server;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class RequestParser {
-    private static RequestHandlerChainNode root = null;
+    private static ResponsibleChainNode root = null;
     private RequestParser(){
         root = new NodeCircle(CmdLevel.CIRCLE);
         NodePolygone p = new NodePolygone(CmdLevel.POLYGONE,root);
+        NodeLine ln = new NodeLine(CmdLevel.Line,p);
+        NodeLoad load = new NodeLoad(CmdLevel.LOAD,ln);
+        NodeSave save = new NodeSave(CmdLevel.SAVE,load);
     }
     private static RequestParser instance = null;
 
@@ -23,21 +25,28 @@ public class RequestParser {
         return instance;
     }
 
-    public void update(GeomCompos screen) throws IOException {
+    public boolean update(GeomCompos screen) throws IOException {
+        try {
+            for(String msg: Server.getInstance().update()){
+                String[] args = msg.split(" ");
+                if(args.length == 0) return false;
 
-        for(String msg: Server.getInstance().update()){
-            String[] args = msg.split(" ");
-            if(args.length == 0) return;
+                ArrayList<Integer> params = new ArrayList<>();
+                int cmd = Integer.parseInt(args[0]);
 
-            ArrayList<Integer> params = new ArrayList<>();
-            int cmd = Integer.parseInt(args[0]);
+                for(int i = 1;i < args.length;++i){
+                    params.add(Integer.parseInt(args[i]));
+                }
 
-            for(int i = 0;i < args.length;++i){
-                params.add(Integer.parseInt(args[i]));
+                root.handle(screen,cmd,params);
+                return  true;
             }
-
-            root.handle(screen,cmd,params);
         }
+        catch (NumberFormatException ex)
+        {
+            System.out.println(ex);
+        }
+        return  false;
     }
 
 }

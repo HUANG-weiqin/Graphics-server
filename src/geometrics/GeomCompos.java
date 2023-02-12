@@ -14,6 +14,10 @@ public class GeomCompos extends Geometric{
         geometrics.add(geom);
     }
 
+    public void MergeGeomCompos(GeomCompos other){
+        geometrics.addAll(other.geometrics);
+    }
+
     public ArrayList<Geometric> getGeometrics() {
         return geometrics;
     }

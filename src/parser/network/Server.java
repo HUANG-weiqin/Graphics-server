@@ -17,22 +17,22 @@ public class Server implements Runnable{
     public static Server getInstance()throws IOException {
         if(instance == null){
             instance = new Server();
-            instance.ss = new ServerSocket(8888);
+            instance.ss = new ServerSocket(8080);
+            Thread thread = new Thread(instance);
+            thread.start();
         }
-        instance.run();
         return instance;
     }
 
 
     public List<String> update() throws IOException {
-
         List<String> res = new LinkedList<>();
         List<Client> toRemove = new LinkedList<>();
          for(Client c : clients){
-             System.out.println(clients.size());
-            String msg = c.readtMsg();
+            String msg = c.readMsg();
             if(msg.length() == 0)
                 continue;
+            System.out.println(msg);
             if(msg.equals("quit")){
                 toRemove.add(c);
                 c.quit();
@@ -44,16 +44,18 @@ public class Server implements Runnable{
          clients.removeAll(toRemove);
          toRemove.clear();
 
-         return  res;
+        return  res;
     }
 
 
     @Override
     public void run() {
         try {
-            Socket sc = ss.accept();
-            clients.add(new Client(sc));
-            System.out.println("newcomer");
+            while (true){
+                Socket sc = ss.accept();
+                clients.add(new Client(sc));
+                System.out.println("new client :" + clients.size());
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

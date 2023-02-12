@@ -1,6 +1,8 @@
 package geometrics.tools;
 
-public class Points {
+import java.io.Serializable;
+
+public class Points implements Serializable {
     private int x;
     private int y;
 

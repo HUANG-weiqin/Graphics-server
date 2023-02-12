@@ -1,5 +1,7 @@
 package geometrics;
 
-public abstract class Geometric {
+import java.io.Serializable;
+
+public abstract class Geometric implements Serializable {
     public abstract void accept(GeomVisitor geomVisitor);
 }

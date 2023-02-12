@@ -1,18 +1,26 @@
 package parser;
 
 import geometrics.GeomCompos;
-import geometrics.geom.Circle;
+import geometrics.geom.Polygone;
 import geometrics.tools.Points;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class NodePolygone extends RequestHandlerChainNode{
-    public NodePolygone(CmdLevel polygone, RequestHandlerChainNode prev) {
+public class NodePolygone extends ResponsibleChainNode {
+    public NodePolygone(CmdLevel polygone, ResponsibleChainNode prev) {
         super(polygone,prev);
     }
 
     @Override
     protected void exec(GeomCompos geom, ArrayList<Integer> args) {
-        Circle circle = new Circle(new Points(args.get(0),args.get(1)),args.get(2));
+        List<Points> points = new ArrayList<>();
+
+        for(int i=0;i<args.size();i+=2){
+            points.add(new Points(args.get(i),args.get(i+1)));
+        }
+
+        Polygone pl = new Polygone(points);
+        geom.addGeometric(pl);
     }
 }
