@@ -17,6 +17,9 @@ public class GeomDisplayVisitor implements GeomVisitor {
     private static GeomDisplayVisitor instance;
     private GeomDisplayVisitor(){}
 
+    /**
+     * 绘制图形的visitor，用了单例模式，因为不需要多个该visitor的实例
+     */
     public static GeomDisplayVisitor getInstance(){
         if(instance == null){
             instance = new GeomDisplayVisitor();

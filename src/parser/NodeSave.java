@@ -12,6 +12,9 @@ public class NodeSave extends ResponsibleChainNode{
         super(cmdLevel, prev);
     }
 
+    /**
+     * 将当前的屏幕图形 object 保存为一个文件，下次要用可以直接将这个object读取并显示
+     */
     @Override
     protected void exec(GeomCompos geom, ArrayList<Integer> args) {
 

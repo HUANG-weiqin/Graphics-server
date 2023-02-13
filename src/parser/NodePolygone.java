@@ -11,7 +11,9 @@ public class NodePolygone extends ResponsibleChainNode {
     public NodePolygone(CmdLevel polygone, ResponsibleChainNode prev) {
         super(polygone,prev);
     }
-
+    /**
+     * 绘制多边形，args中存储多边形顶点
+     */
     @Override
     protected void exec(GeomCompos geom, ArrayList<Integer> args) {
         List<Points> points = new ArrayList<>();

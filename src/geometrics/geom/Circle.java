@@ -3,6 +3,9 @@ import geometrics.GeomSimple;
 import geometrics.GeomVisitor;
 import geometrics.tools.Points;
 
+/**
+ * 简单图形 圆形，由一个圆心和半径组成
+ */
 public class Circle extends GeomSimple {
     private Points center;
     private int R;

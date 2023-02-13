@@ -2,6 +2,9 @@ package geometrics;
 
 import java.util.ArrayList;
 
+/**
+ * 与简单图形，GeomSimple相对，不能单独存在，由一系列图形组成，可以看作是图形的集合geometrics
+ */
 public class GeomCompos extends Geometric{
 
     private ArrayList<Geometric> geometrics;

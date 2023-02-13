@@ -11,6 +11,9 @@ public class NodeLine extends ResponsibleChainNode{
         super(cmdLevel, prev);
     }
 
+    /**
+     * 绘制线段
+     */
     @Override
     protected void exec(GeomCompos geom, ArrayList<Integer> args) {
         Points p1 = new Points(args.get(0),args.get(1));

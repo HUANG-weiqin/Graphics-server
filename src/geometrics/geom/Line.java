@@ -4,6 +4,9 @@ import geometrics.GeomSimple;
 import geometrics.GeomVisitor;
 import geometrics.tools.Points;
 
+/**
+ * 简单图形 线段，由两个端点组成
+ */
 public class Line extends GeomSimple {
 
     public Line(Points p1, Points p2) {

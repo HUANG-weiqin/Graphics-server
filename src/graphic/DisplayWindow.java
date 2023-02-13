@@ -3,11 +3,17 @@ package graphic;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
+/**
+ * 调用图形接口，产生一个图形窗口，用了单例模式，因为不需要多个窗口
+ */
 public class DisplayWindow {
 
     private static DisplayWindow instance;
     private DisplayWindow(){}
 
+    /**
+     * 调用图形接口，产生一个图形窗口，用了单例模式，因为不需要多个窗口，多个客户端在同一个窗口中绘制
+     */
     public static DisplayWindow getInstance(){
         if(instance == null){
             instance = new DisplayWindow("display");
@@ -37,10 +43,16 @@ public class DisplayWindow {
         update();
     }
 
+    /**
+     * 获得可绘制的obj
+     */
     public Graphics getGraphics(){
         return  frame.getBufferStrategy().getDrawGraphics();
     }
 
+    /**
+     * 当绘制图形后，需要调用这个方法将绘制的新图形显示在屏幕上
+     */
     public void update(){
         BufferStrategy strategy = frame.getBufferStrategy();
         Graphics graphics = strategy.getDrawGraphics();
