@@ -18,8 +18,8 @@ public class Main {
             while (true) {
                 boolean changed = RequestParser.getInstance().update(rootGeom);/*解析并处理请求，返回是否有新的图形被加入*/
                 if (changed) {
-                    DisplayWindow.getInstance().clear();
                     GeomDisplayVisitor.getInstance().visit(rootGeom);/*如果有新的图形被加入了，那么要用visitor访问他们，通过visitor做出对应处理，在这里就是通过awt绘制*/
+                    DisplayWindow.getInstance().update();
                     rootGeom.clear();
                 }
             }

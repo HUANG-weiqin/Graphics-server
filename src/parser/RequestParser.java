@@ -20,6 +20,7 @@ public class RequestParser {
         NodeLine ln = new NodeLine(CmdLevel.Line,p);
         NodeLoad load = new NodeLoad(CmdLevel.LOAD,ln);
         NodeSave save = new NodeSave(CmdLevel.SAVE,load);
+        NodeClear clear = new NodeClear(CmdLevel.CLEAR,save);
     }
     private static RequestParser instance = null;
 

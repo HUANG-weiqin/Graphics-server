@@ -33,7 +33,6 @@ public class GeomDisplayVisitor implements GeomVisitor {
                 geomCompos.getGeometrics()) {
             g.accept(this);
         }
-        w.update();
     }
 
     @Override

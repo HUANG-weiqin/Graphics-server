@@ -14,6 +14,7 @@ enum CmdLevel {
     Line ,
     LOAD,
     SAVE,
+    CLEAR
 }
 
 /**

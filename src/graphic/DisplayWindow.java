@@ -31,7 +31,7 @@ public class DisplayWindow {
         frame = new Frame(name);
         frame.setBounds(60,60,400,400);
         frame.setVisible(true);
-        //frame.setIgnoreRepaint(true);
+        frame.setIgnoreRepaint(true);
         frame.createBufferStrategy(2);
         try {
             Thread.sleep(150);
@@ -70,6 +70,7 @@ public class DisplayWindow {
         graphics.setColor(Color.WHITE);
         graphics.fillRect(0,0,frame.getWidth(),frame.getHeight());
         graphics.setColor(c);
+        System.out.println("clear");
     }
 
 }
