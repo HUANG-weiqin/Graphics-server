@@ -31,7 +31,7 @@ public class DisplayWindow {
         frame = new Frame(name);
         frame.setBounds(60,60,400,400);
         frame.setVisible(true);
-        frame.setIgnoreRepaint(true);
+        //frame.setIgnoreRepaint(true);
         frame.createBufferStrategy(2);
         try {
             Thread.sleep(150);
@@ -58,6 +58,18 @@ public class DisplayWindow {
         Graphics graphics = strategy.getDrawGraphics();
         strategy.show();
         graphics.dispose();
+    }
+
+    /**
+     * 清除屏幕上的绘画
+     */
+    public void clear(){
+        BufferStrategy strategy = frame.getBufferStrategy();
+        Graphics graphics = strategy.getDrawGraphics();
+        Color c = graphics.getColor();
+        graphics.setColor(Color.WHITE);
+        graphics.fillRect(0,0,frame.getWidth(),frame.getHeight());
+        graphics.setColor(c);
     }
 
 }

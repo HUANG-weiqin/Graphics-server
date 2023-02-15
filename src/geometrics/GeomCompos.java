@@ -29,4 +29,6 @@ public class GeomCompos extends Geometric{
     public void accept(GeomVisitor geomVisitor) {
         geomVisitor.visit(this);
     }
+
+    public void clear(){geometrics.clear();}
 }
