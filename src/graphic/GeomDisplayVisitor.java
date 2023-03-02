@@ -8,6 +8,7 @@ import geometrics.geom.Line;
 import geometrics.geom.Polygone;
 import geometrics.tools.Points;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class GeomDisplayVisitor implements GeomVisitor {
@@ -37,7 +38,9 @@ public class GeomDisplayVisitor implements GeomVisitor {
 
     @Override
     public void visit(Circle c) {
-        w.getGraphics().drawOval(c.getCenter().getX() - c.getR(),c.getCenter().getY() - c.getR(),c.getR() * 2,c.getR() * 2);
+        Graphics g = w.getGraphics();
+        g.setColor(c.getColor());
+        g.fillOval(c.getCenter().getX() - c.getR(),c.getCenter().getY() - c.getR(),c.getR() * 2,c.getR() * 2);
     }
 
     @Override
@@ -50,14 +53,18 @@ public class GeomDisplayVisitor implements GeomVisitor {
             yy[i] = pt.getY();
             i+=1;
         }
-        w.getGraphics().drawPolygon(xx,yy,p.nbPoints());
+        Graphics g = w.getGraphics();
+        g.setColor(p.getColor());
+        g.fillPolygon(xx,yy,p.nbPoints());
     }
 
     @Override
     public void visit(Line line) {
         Points p1 = line.getPoints().get(0);
         Points p2 = line.getPoints().get(1);
-        w.getGraphics().drawLine(p1.getX(), p1.getY(), p2.getX(),p2.getY());
+        Graphics g = w.getGraphics();
+        g.setColor(line.getColor());
+        g.drawLine(p1.getX(), p1.getY(), p2.getX(),p2.getY());
     }
 
 

@@ -29,7 +29,7 @@ public class DisplayWindow {
 
     public DisplayWindow(String name){
         frame = new Frame(name);
-        frame.setBounds(60,60,400,400);
+        frame.setBounds(60,60,1500,1000);
         frame.setVisible(true);
         frame.setIgnoreRepaint(true);
         frame.createBufferStrategy(2);

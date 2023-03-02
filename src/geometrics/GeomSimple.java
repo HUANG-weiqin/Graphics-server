@@ -2,6 +2,7 @@ package geometrics;
 
 import geometrics.tools.Points;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -9,6 +10,8 @@ import java.util.List;
  */
 public abstract class GeomSimple extends Geometric{
     private ArrayList<Points> points;
+
+    private Color color = Color.black;
     public GeomSimple(){
         points = new ArrayList<>();
     }
@@ -25,4 +28,11 @@ public abstract class GeomSimple extends Geometric{
         return points;
     }
 
+    public Color getColor() {
+        return color;
+    }
+
+    public  void setColor(Color c){
+        color = c;
+    }
 }
