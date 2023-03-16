@@ -18,6 +18,32 @@ public class GeomDisplayVisitor implements GeomVisitor {
     private static GeomDisplayVisitor instance;
     private GeomDisplayVisitor(){}
 
+    private Points convert(Points p){
+        int seuil_w = 20;
+        int seuil_h= 20;
+
+        float px = p.getX() + seuil_w/2;
+        float py = p.getY() + seuil_h/2;
+
+        int height = w.getFrame().getHeight();
+        int width = w.getFrame().getWidth();
+
+        Float new_w = (float) (px * width / seuil_w);
+        Float new_h = (float) (py * height / seuil_h);
+
+        return new Points(new_w,new_h);
+    }
+
+    private Integer convert(Float x){
+        int seuil_w = 20;
+
+        int width = w.getFrame().getWidth();
+
+        Integer new_w = (int) (x * width / seuil_w);
+
+        return new_w;
+    }
+
     /**
      * 绘制图形的visitor，用了单例模式，因为不需要多个该visitor的实例
      */
@@ -40,7 +66,9 @@ public class GeomDisplayVisitor implements GeomVisitor {
     public void visit(Circle c) {
         Graphics g = w.getGraphics();
         g.setColor(c.getColor());
-        g.fillOval(c.getCenter().getX() - c.getR(),c.getCenter().getY() - c.getR(),c.getR() * 2,c.getR() * 2);
+        Points center = convert(c.getCenter());
+        int r = convert(c.getR());
+        g.fillOval((int) (center.getX() - r), (int) (center.getY() - r),r * 2,r * 2);
     }
 
     @Override
@@ -49,8 +77,9 @@ public class GeomDisplayVisitor implements GeomVisitor {
         int yy[] = new int[p.nbPoints()];
         int i=0;
         for (Points pt:p.getPoints()){
-            xx[i] = pt.getX();
-            yy[i] = pt.getY();
+            Points newp = convert(pt);
+            xx[i] = (int)newp.getX();
+            yy[i] = (int)newp.getY();
             i+=1;
         }
         Graphics g = w.getGraphics();
@@ -60,11 +89,11 @@ public class GeomDisplayVisitor implements GeomVisitor {
 
     @Override
     public void visit(Line line) {
-        Points p1 = line.getPoints().get(0);
-        Points p2 = line.getPoints().get(1);
+        Points p1 = convert(line.getPoints().get(0)) ;
+        Points p2 = convert(line.getPoints().get(1)) ;
         Graphics g = w.getGraphics();
         g.setColor(line.getColor());
-        g.drawLine(p1.getX(), p1.getY(), p2.getX(),p2.getY());
+        g.drawLine((int) p1.getX(), (int) p1.getY(), (int) p2.getX(),(int) p2.getY());
     }
 
 

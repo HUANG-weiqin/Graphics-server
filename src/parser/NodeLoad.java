@@ -16,7 +16,7 @@ public class NodeLoad extends ResponsibleChainNode{
      * 读取上次保存的图形，并显示到屏幕上
      */
     @Override
-    protected void exec(GeomCompos geom, ArrayList<Integer> args) {
+    protected void exec(GeomCompos geom, ArrayList<Float> args) {
         try{
             FileInputStream fi = new FileInputStream("GomeSaved.geom");
             ObjectInputStream in = new ObjectInputStream(fi);

@@ -8,9 +8,9 @@ import geometrics.tools.Points;
  */
 public class Circle extends GeomSimple {
     private Points center;
-    private int R;
+    private float R;
 
-    public Circle(Points center,int R){
+    public Circle(Points center,float R){
         addPoint(center);
         this.center = center;
         this.R = R;
@@ -29,11 +29,11 @@ public class Circle extends GeomSimple {
         this.center = center;
     }
 
-    public int getR() {
+    public float getR() {
         return R;
     }
 
-    public void setR(int r) {
+    public void setR(Float r) {
         R = r;
     }
 }

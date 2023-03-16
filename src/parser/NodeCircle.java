@@ -21,7 +21,7 @@ public class NodeCircle extends ResponsibleChainNode {
      * 绘制圆形
      */
     @Override
-    protected void exec(GeomCompos geom, ArrayList<Integer> args) {
+    protected void exec(GeomCompos geom, ArrayList<Float> args) {
         Circle circle = new Circle(new Points(args.get(0),args.get(1)),args.get(2));
         circle.setColor(new Color(args.get(3),args.get(4),args.get(5)));
         geom.addGeometric(circle);

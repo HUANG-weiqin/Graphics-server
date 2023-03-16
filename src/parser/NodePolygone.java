@@ -16,7 +16,7 @@ public class NodePolygone extends ResponsibleChainNode {
      * 绘制多边形，args中存储多边形顶点
      */
     @Override
-    protected void exec(GeomCompos geom, ArrayList<Integer> args) {
+    protected void exec(GeomCompos geom, ArrayList<Float> args) {
         List<Points> points = new ArrayList<>();
 
         for(int i=0;i<args.size()-3;i+=2){
@@ -24,9 +24,9 @@ public class NodePolygone extends ResponsibleChainNode {
         }
 
         Polygone pl = new Polygone(points);
-        int r = args.size()-3;
-        int g = args.size()-2;
-        int b = args.size()-1;
+        int r = args.get(args.size()-3).intValue();
+        int g = args.get(args.size()-2).intValue();
+        int b = args.get(args.size()-1).intValue();
         pl.setColor(new Color(r,g,b));
         geom.addGeometric(pl);
     }

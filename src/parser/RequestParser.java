@@ -45,11 +45,11 @@ public class RequestParser {
                 String[] args = msg.split(" ");
                 if(args.length == 0) return false;
 
-                ArrayList<Integer> params = new ArrayList<>();
-                int cmd = Integer.parseInt(args[0]);
+                ArrayList<Float> params = new ArrayList<>();
+                Integer cmd = Integer.parseInt(args[0]);
 
                 for(int i = 1;i < args.length;++i){
-                    params.add(Integer.parseInt(args[i]));
+                    params.add(Float.parseFloat(args[i]));
                 }
 
                 root.handle(screen,cmd,params);

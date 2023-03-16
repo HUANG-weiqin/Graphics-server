@@ -11,7 +11,7 @@ public class NodeClear extends ResponsibleChainNode{
     }
 
     @Override
-    protected void exec(GeomCompos geom, ArrayList<Integer> args) {
+    protected void exec(GeomCompos geom, ArrayList<Float> args) {
         DisplayWindow.getInstance().clear();
     }
 }

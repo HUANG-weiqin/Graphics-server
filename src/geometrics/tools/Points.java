@@ -3,32 +3,26 @@ package geometrics.tools;
 import java.io.Serializable;
 
 public class Points implements Serializable {
-    private int x;
-    private int y;
+    private Float x;
+    private Float y;
 
-    public Points(int x,int y){
+    public Points(Float x,Float y){
         this.x = x;
         this.y = y;
     }
-
-    public Points(Integer x,Integer y){
-        this.x = x;
-        this.y = y;
-    }
-
-    public int getY() {
+    public float getY() {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(Float y) {
         this.y = y;
     }
 
-    public int getX() {
+    public float getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(Float x) {
         this.x = x;
     }
 }

@@ -20,7 +20,7 @@ public class Server implements Runnable{
     public static Server getInstance()throws IOException {
         if(instance == null){
             instance = new Server();
-            instance.ss = new ServerSocket(8080);
+            instance.ss = new ServerSocket(8081);
             Thread thread = new Thread(instance);/*开启另一个线程执行run方法用来监听端口等待客户端tcp链接*/
             thread.start();
         }

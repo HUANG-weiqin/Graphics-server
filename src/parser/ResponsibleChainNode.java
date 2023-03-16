@@ -44,7 +44,7 @@ public abstract class ResponsibleChainNode {
      * @param cmd_idx 客户端的请求头  比如画圆形需要 请求头为 0
      * @param args 客户端请求的其他参数，比如画圆形需要 圆心位置和半径大小
      */
-    public void handle(GeomCompos geom, int cmd_idx, ArrayList<Integer> args){
+    public void handle(GeomCompos geom, Integer cmd_idx, ArrayList<Float> args){
         if(cmd_idx > level.ordinal()){
             next.handle(geom,cmd_idx,args);
         }
@@ -58,5 +58,5 @@ public abstract class ResponsibleChainNode {
      * @param geom 代表屏幕上所有的的图形集合
      * @param args 客户端请求的其他参数，比如画圆形需要 圆心位置和半径大小
      */
-    protected abstract void exec(GeomCompos geom, ArrayList<Integer> args);
+    protected abstract void exec(GeomCompos geom, ArrayList<Float> args);
 }
